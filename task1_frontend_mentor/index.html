@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleMenu.css">
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+</head>
+<body>
+    <header class="display_flex j_content_space_bet">
+        <ul class="flex_dir_col width_40 color_grey m_t_2 dropdown">
+            <li class="display_inline">
+                <img src="images/logo.svg" alt="Логотип"/>
+            </li>
+            <li class="display_inline m_l_4 p-l-05 font_size_15 menu_el drop_menu_el" id="featuresElemMenu">
+                Features<img src="images/icon-arrow-down.svg" id="featuresImgArrow" alt="Уголок вниз" class="p-l-05"/>
+                <div id="featuresDropdown" class="dropdown-content">
+                    <a href="#"><img src="images/icon-todo.svg" alt="Todo List" class="p-l-05 p-r-05"/>Todo List</a>
+                    <a href="#"><img src="images/icon-calendar.svg" alt="Calendar" class="p-l-05 p-r-05"/>Calendar</a>
+                    <a href="#"><img src="images/icon-reminders.svg" alt="Reminders" class="p-l-05 p-r-05"/>Reminders</a>
+                    <a href="#"><img src="images/icon-planning.svg" alt="Planning" class="p-l-05 p-r-05"/>Planning</a>
+                </div>
+            </li>
+            <li class="display_inline m_l_2 font_size_15 drop_menu_el menu_el" id="companyElemMenu">
+                Company<img src="images/icon-arrow-down.svg" id="companyImgArrow" alt="Уголок вниз" class="p-l-05"/>
+                <div id="companyDropdown" class="dropdown-content">
+                    <a href="#">History</a>
+                    <a href="#">Our team</a>
+                    <a href="#">Blog</a>
+                </div>
+            </li>
+
+            <li class="display_inline m_l_2 font_size_15 menu_el">Careers</li>
+            <li class="display_inline m_l_2 font_size_15 menu_el">About</li>
+        </ul>
+        <ul class="flex_dir_col color_grey font_size_15 m_t_2">
+            <li class="display_inline m_r_2 menu_el">Login</li>
+            <li class="display_inline ">
+                <button class="btn_white  font_size_15">Register</button>
+            </li>
+        </ul>
+    </header>
+    <main class="display_flex j_content_center align_end">
+        <div class="width_40 border_box m_b_none_auto inline_block">
+            <div class="m_t_8">
+                <h1 class="font_size_5_5_rem">Make<br>remote work</h1>
+                <p class="m_t_4 color_grey line_h_1_5">
+                    Get your team in sync, no matter your location.<br>
+                    Streamline processes, create team rituals, and<br>
+                    watch productivity soar.
+                </p>
+            </div>
+            <div class="m_t_4">
+                <button class="btn_black font_size_15 bold">Learn more</button>
+            </div>
+            <div class="m_t_5">
+                <ul class="flex_dir_col p-l-0 m_b_none_auto">
+                    <li class="display_inline m_r_3">
+                        <img src="images/client-databiz.svg" alt="Датабиз" />
+                    </li>
+                    <li class="display_inline m_r_3">
+                        <img src="images/client-audiophile.svg" alt="Аудиофайл" />
+                    </li>
+                    <li class="display_inline m_r_3"><img src="images/client-maker.svg" alt="Мэйкер" /></li>
+                    <li class="display_inline"><img src="images/client-meet.svg" alt="Мит" /></li>
+                </ul>
+            </div>
+        </div>
+        <div class="width_40 display_flex j_content_start">
+            <img src="images/image-hero-desktop.png" alt="Картинка" class="img_contain"/>
+        </div>
+    </main>
+
+    <div class="attribution m_t_8">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+            Frontend Mentor </a
+        >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
