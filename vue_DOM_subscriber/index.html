@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try v-on</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<!-- директива v-model связывает элементы форм и состояние приложения -->
+<div id="app">
+    <h2>Директива v-model</h2>
+    <p>Директива v-model связывает элементы форм и состояние приложения</p>
+    <input v-model="name">
+    <input v-model="lastname">
+    <p>Full name: {{ name }} {{ lastname }}</p>
+</div>
+<div>
+    <h2>То же самое на нативном JS</h2>
+    <input id="nameInp" type="text" name="name">
+    <input id="lastnameInp" type="text" name="lastname">
+    <p id="fullNameStr">Full name: </p>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
