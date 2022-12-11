@@ -2,93 +2,117 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <!--<link href="/dist/main.css" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <title>Invoice</title>
   </head>
-  <body>
-    <div id="invoice">
-      <div>
-        <section>
-          <h1>сделать этот семантический заголовок невидимым</h1>
-          <p>№ 123</p>
+  <body class="bg-gray-200">
+    <div id="invoice" class="container mx-auto bg-white">
+      <div class="flex flex-row" >
+        <section class="basis-1/2">
+          <h2 class="text-[44px] text-slate-400">
+            <label for="inputInvoiceNumber">№ </label>
+            <input class="w-32 border-b-2 focus:border-slate-500 focus:text-slate-500 focus:outline-none"
+                   id="inputInvoiceNumber" required type="text"/>
+          </h2>
         </section>
-        <section>
-          <h1>Invoice</h1>
-          <div>
-            <div>
-              <h4>Issued</h4>
-              <time datetime="2023-01-01">01 Jan, 2023</time>
+        <section class="basis-1/2">
+          <h2 class="text-[44px] text-black font-bold">Invoice</h2>
+          <div class="flex flex-row mt-12">
+            <div class="basis-1/2">
+              <h4 class="font-bold">Issued</h4>
+              <time datetime="2023-01-01" class="text-base">01 Jan, 2023</time>
             </div>
-            <div>
-              <h4>Due</h4>
-              <time datetime="2023-01-07">07 Jan, 2023</time>
+            <div class="basis-1/2">
+              <h4 class="font-bold">Due</h4>
+              <time datetime="2023-01-07" class="text-base">07 Jan, 2023</time>
             </div>
           </div>
+          <div class="flex flex-row">
+            <div class="basis-1/2  mt-16">
+              <h4 class="font-bold">From</h4>
+              <p class="text-base">
+                Name or Company<br>
+                123 Godly Street<br>
+                Internet, 198233<br>
+                Saint-Petersburg, Russia<br>
+              </p>
+            </div>
+            <div class="basis-1/2 mt-16">
+              <h4 class="font-bold">To</h4>
+              <p class="text-base">
+                Name or Company<br>
+                123 Godly Street<br>
+                Internet, 198233<br>
+                Saint-Petersburg, Russia<br>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div>
+        <section class="mt-16">
+            <div class="flex flex-row">
+              <div class="basis-1/2">Item</div>
+              <div class="flex flex-row basis-1/2">
+                <div class="basis-1/4">Cost <span class="text-gray-300">($)</span></div>
+                <div class="basis-1/4">Qty</div>
+                <div class="basis-1/2 text-right">Total</div>
+              </div>
+            </div>
+            <hr>
+            <div class="flex flex-row">
+              <div class="basis-1/2">
+                <div>Design services</div>
+                <span class="text-gray-300">20% initial free</span>
+              </div>
+              <div class="flex flex-row basis-1/2">
+                <div class="basis-1/4">
+                  <span>$5000</span>
+                </div>
+                <div class="basis-1/4">
+                  <span>1</span>
+                </div>
+                <div class="basis-1/2 text-right">$5000</div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row">
+            <div class="basis-1/2">
+              <button>Add item</button>
+            </div>
+            <div class="flex flex-row basis-1/2">
+              <div class="basis-1/2 mt-16">
+                <div>
+                  <hr>
+                  <span>Subtotal</span>
+                </div>
+                <div>
+                  <span>Discount (20%)</span>
+                </div>
+                <div class="mt-16">
+                  <hr>
+                  <span>Total</span>
+                </div>
+              </div>
+              <div class="basis-1/2 mt-16 text-end">
+                <hr>
+                <div>
+                  <span>$5000</span>
+                </div>
+                <div>
+                  <span>$1000</span>
+                </div>
+                <div class="mt-16">
+                  <hr>
+                  <span>$4000</span>
+                </div>
+              </div>
+            </div>
         </section>
       </div>
 
-      <div>
-        <section>
-          <h1>скрытое название семантического заголовка</h1>
-          <div style="display:table">
-            <div style="display:table-row">
-              <div style="display:table-cell">Item</div>
-              <div style="display:table-cell">Cost</div>
-              <div style="display:table-cell">Qty</div>
-              <div style="display:table-cell">Total</div>
-            </div>
-            <!--   динамические данные   -->
-            <div style="display:table-row">
-              <div style="display:table-cell">
-                <span>Design services</span>
-                <span>20% initial free</span>
-              </div>
-              <div style="display:table-cell">
-                <span>$5000</span>
-              </div>
-              <div style="display:table-cell">
-                <span>1</span>
-              </div>
-              <div style="display:table-cell">Total</div>
-            </div>
-          </div>
-          <button>Add item</button>
-          <div style="display:table">
-            <div style="display:table-row">
-              <div style="display:table-cell">Item</div>
-              <div style="display:table-cell">Cost</div>
-              <div style="display:table-cell">Qty</div>
-              <div style="display:table-cell">Total</div>
-            </div>
-            <!--   динамические данные   -->
-            <div style="display:table-row">
-              <div style="display:table-cell">
-                <span>Subtotal</span>
-              </div>
-              <div style="display:table-cell">
-                <span>$7000</span>
-              </div>
-            </div>
-            <div style="display:table-row">
-              <div style="display:table-cell">
-                <span>Discount (20%)</span>
-              </div>
-              <div style="display:table-cell">$1000</div>
-            </div>
-            <div style="display:table-row">
-              <div style="display:table-cell"></div>
-              <div style="display:table-cell"></div>
-            </div>
-            <div style="display:table-row">
-              <div style="display:table-cell">
-                <span>Total</span>
-              </div>
-              <div style="display:table-cell">$4000</div>
-            </div>
-          </div>
-        </section>
-      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
