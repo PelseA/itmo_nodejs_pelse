@@ -7,6 +7,13 @@
     <link href="/dist/output.css" rel="stylesheet">
     <title>Invoice</title>
   </head>
+  <style>
+    #invoice {
+      height: 297mm;
+      width: 210mm;
+      padding: 10mm;
+    }
+  </style>
   <body class="bg-gray-200">
     <div id="invoice" class="container mx-auto bg-white">
       <div class="flex flex-row" >
@@ -51,34 +58,32 @@
           </div>
         </section>
       </div>
-      <div>
-        <section class="mt-16">
-            <div class="flex flex-row">
-              <div class="basis-1/2">Item</div>
-              <div class="flex flex-row basis-1/2">
-                <div class="basis-1/4">Cost <span class="text-gray-300">($)</span></div>
-                <div class="basis-1/4">Qty</div>
-                <div class="basis-1/2 text-right">Total</div>
-              </div>
-            </div>
-            <hr>
-            <div class="flex flex-row">
-              <div class="basis-1/2">
-                <div>Design services</div>
-                <span class="text-gray-300">20% initial free</span>
-              </div>
-              <div class="flex flex-row basis-1/2">
-                <div class="basis-1/4">
-                  <span>$5000</span>
-                </div>
-                <div class="basis-1/4">
-                  <span>1</span>
-                </div>
-                <div class="basis-1/2 text-right">$5000</div>
-              </div>
-            </div>
+      <section class="mt-16">
+        <div class="flex flex-row">
+          <div class="basis-1/2">Item</div>
+          <div class="flex flex-row basis-1/2">
+            <div class="basis-1/4">Cost <span class="text-gray-300">($)</span></div>
+            <div class="basis-1/4">Qty</div>
+            <div class="basis-1/2 text-right">Total</div>
           </div>
-          <div class="flex flex-row">
+        </div>
+        <hr>
+        <div class="flex flex-row">
+          <div class="basis-1/2">
+            <div>Design services</div>
+            <span class="text-gray-300">20% initial free</span>
+          </div>
+          <div class="flex flex-row basis-1/2">
+            <div class="basis-1/4">
+              <span>$5000</span>
+            </div>
+            <div class="basis-1/4">
+              <span>1</span>
+            </div>
+            <div class="basis-1/2 text-right">$5000</div>
+          </div>
+        </div>
+        <div class="flex flex-row">
             <div class="basis-1/2">
               <button>Add item</button>
             </div>
@@ -110,9 +115,34 @@
                 </div>
               </div>
             </div>
-        </section>
-      </div>
-
+        </div>
+        <div class="flex flex-row">
+          <div class="basis-1/2"></div>
+          <div class="flex flex-row basis-1/2">
+            <div class="basis-1/2 mt-16">
+              <div>
+                <span>IBAN</span>
+              </div>
+            </div>
+            <div class="basis-1/2 mt-16 text-end">
+              <div>
+                <span>6666 6666 7777 8888 0000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row">
+          <div class="basis-1/2"></div>
+          <div class="flex flex-col basis-1/2">
+            <div class="">
+              <span>Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</span>
+            </div>
+            <div >
+              <span>Thank you, <br> Alexandra</span>
+            </div>
+          </div>
+          </div>
+      </section>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
