@@ -1,13 +1,13 @@
 class InvoicePositionVO {
     constructor() {
-        this.item = '';
+        this.itemName = '';
         this.cost = '';
         this.qty = '';
         this.total = '';
     }
 
-    setItem(item) {
-        this.item = item;
+    setItemName(itemName) {
+        this.item = itemName;
     }
     setCost(cost) {
         this.cost = cost;
