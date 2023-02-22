@@ -47,18 +47,18 @@ if (queryString) {
     <div v-if="contentForAdvice && contentForAdvice[0]" class="flex justify-between items-center px-16 text-gray-900 bg-purple-800">
       <div
           v-for="advice in contentForAdvice"
-          class="flex justify-between border-4 border-gray-900">
+          class="flex justify-between">
         <div class="custom-width-50">
           <div class="p-4">
             <img
-                class="object-cover border-2 border-rose-600"
+                class="object-cover"
                 v-bind:src="advice.lady_img "
                 alt="Одетый по погоде человек"
             >
           </div>
-          <div class="p-4 border-4 border-gray-900">
-            <h2 class="text-4xl border-4 border-gray-900">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal border-4 border-gray-900">
+          <div class="p-4">
+            <h2 class="text-4xl">В такую погоду</h2>
+            <p class="text-base text-gray-800 leading-normal">
               {{ advice.lady_text }}
             </p>
           </div>
@@ -81,18 +81,18 @@ if (queryString) {
       </div>
     </div>
     <div v-else class="flex justify-between items-center px-16 text-gray-900 bg-purple-800">
-      <div class="flex justify-between border-4 border-gray-900">
-        <div class="border-4 border-gray-900">
+      <div class="flex justify-between">
+        <div class="">
           <div class="p-4">
             <img
-                class="object-cover border-2 border-rose-600"
+                class="object-cover"
                 src="https://previews.123rf.com/images/ratoca/ratoca1507/ratoca150700342/43049492-one-moment-please-comment.jpg"
                 alt="Подождите"
             >
           </div>
-          <div class="p-4 border-4 border-gray-900">
-            <h2 class="text-4xl border-4 border-gray-900">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal border-4 border-gray-900">
+          <div class="p-4">
+            <h2 class="text-4xl">В такую погоду</h2>
+            <p class="text-base text-gray-800 leading-normal">
               ...
             </p>
           </div>
