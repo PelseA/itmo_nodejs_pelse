@@ -14,23 +14,22 @@ const sign = ref('')
 const temperature = ref('')
 let isPropertiesFilled = false
 
-//TODO при нажатии на кнопку записать данные из form
 function prepareParamsForAdvice() {
-  console.log('on setParamsForPageAdvice --->', storage)
+  //console.log('on setParamsForPageAdvice --->', storage)
   if (season.value) storage.setStorageSync("season", season.value)
   else showValidationFrame('seasonFrame')
   if (sign.value || sign.value === '0') storage.setStorageSync("sign", sign.value)
   else showValidationFrame('signFrame')
   if (temperature.value || temperature.value === '0') storage.setStorageSync("temperature", temperature.value)
   else showValidationFrame('temperatureFrame')
-  console.log('--->', season.value, sign.value, temperature.value)
+  //console.log('--->', season.value, sign.value, temperature.value)
   if (season.value
       && (sign.value || sign.value === '0')
       && (temperature.value || temperature.value === '0')) router.push(Routes.ADVICE)
 }
 
 const checkSign = (e) => {
-  console.log('e  ---> ', e.target.value)
+  //console.log('e  ---> ', e.target.value)
   if (e.target) {
     if (e.target.value && e.target.value === '0') {
       temperature.value = '0'
@@ -44,7 +43,7 @@ const checkSign = (e) => {
 }
 
 const checkTemperature = (e) => {
-  console.log('e  ---> ', e.target.value)
+  //console.log('e  ---> ', e.target.value)
   if (e.target) {
     if (e.target.value && e.target.value !== '0' && sign.value === '0') {
       showValidationFrame('signFrame')

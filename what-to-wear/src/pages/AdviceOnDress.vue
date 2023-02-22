@@ -11,11 +11,10 @@ provideApolloClient(apolloClient)
 let contentForAdvice = ref([])
 const storage = useStorage()
 const signValue = storage.hasKey("sign") ? storage.getStorageSync("sign") : ''
-console.log('signValue --->', signValue)
+//console.log('signValue --->', signValue)
 const seasonValue = storage.hasKey("season") ? storage.getStorageSync("season") : ''
-console.log('seasonValue --->', seasonValue)
+//console.log('seasonValue --->', seasonValue)
 const temperatureValue = storage.hasKey("temperature") ? storage.getStorageSync("temperature") : ''
-console.log('temperatureValue --->', temperatureValue)
 let customBG = '';
 if (/лето/i.test(seasonValue)) customBG = 'custom-bg-summer';
 if (/осен/i.test(seasonValue)) customBG = 'custom-bg-autumn';
@@ -29,106 +28,99 @@ queryStringBuilder.setTemperature(temperatureValue)
 const dbName = queryStringBuilder.getDbName(seasonValue)
 
 const queryString = queryStringBuilder.getQueryString()
-console.log('queryString ---> ', queryString)
 
 if (queryString) {
   const { result } = useQuery(gql`${queryString}`)
-  console.log('result from useQuery ', {result})
   contentForAdvice = computed(() => (result.value && result.value[dbName]) || [])
-  console.log('contentForAdvice contentForAdvice --- ', contentForAdvice)
+  //console.log('contentForAdvice contentForAdvice --- ', contentForAdvice)
 } else {
 
 }
 
 </script>
 
-<template class="custom-bg">
+<template>
   <div v-bind:class="customBG">
-    <div v-if="contentForAdvice && contentForAdvice[0]" class="flex justify-between items-center px-16 text-gray-900 bg-purple-800">
-      <div
-          v-for="advice in contentForAdvice"
-          class="flex justify-between">
-        <div class="custom-width-50">
-          <div class="p-4">
-            <img
-                class="object-cover"
-                v-bind:src="advice.lady_img "
-                alt="Одетый по погоде человек"
-            >
-          </div>
-          <div class="p-4">
-            <h2 class="text-4xl">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal">
-              {{ advice.lady_text }}
-            </p>
-          </div>
-        </div>
-        <div class="custom-width-50">
-          <div class="p-4">
-            <img
-                class="object-cover"
-                v-bind:src="advice.man_img"
-                alt="Одетый по погоде человек"
-            >
-          </div>
-          <div class="p-4">
-            <h2 class="text-4xl">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal">
-              {{ advice.man_text }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div v-else class="flex justify-between items-center px-16 text-gray-900 bg-purple-800">
-      <div class="flex justify-between">
-        <div class="">
-          <div class="p-4">
-            <img
-                class="object-cover"
-                src="https://previews.123rf.com/images/ratoca/ratoca1507/ratoca150700342/43049492-one-moment-please-comment.jpg"
-                alt="Подождите"
-            >
-          </div>
-          <div class="p-4">
-            <h2 class="text-4xl">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal">
-              ...
-            </p>
-          </div>
-        </div>
-        <div>
-          <div class="p-4">
-            <img
-                class="object-cover"
-                src="https://previews.123rf.com/images/ratoca/ratoca1507/ratoca150700342/43049492-one-moment-please-comment.jpg"
-                alt="Подождите"
-            >
-          </div>
-          <div class="p-4">
-            <h2 class="text-4xl">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal">
-              ...
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
     <RouterLink :to="Routes.INDEX">
       <button
-          class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+          class="ml-3 rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
       >
         Другая погода
       </button>
     </RouterLink>
+    <div
+        v-if="contentForAdvice && contentForAdvice[0]"
+        class="relative flex flex-wrap lg:h-screen lg:items-center"
+    >
+      <div
+          v-for="advice in contentForAdvice"
+          class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-0 text-center">
+            <div class="p-4">
+              <img
+                  class=""
+                  v-bind:src="advice.lady_img "
+                  alt="Одетый по погоде человек">
+            </div>
+            <div class="p-4">
+              <h2 class="text-2xl">В такую погоду</h2>
+              <p class="text-base text-gray-800 leading-normal">
+                {{ advice.lady_text }}
+              </p>
+            </div>
+            <div class="p-4">
+              <img
+                  class=""
+                  v-bind:src="advice.man_img"
+                  alt="Одетый по погоде человек">
+            </div>
+            <div class="p-4">
+              <h2 class="text-2xl">В такую погоду</h2>
+              <p class="text-base text-gray-800 leading-normal">
+                {{ advice.man_text }}
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div v-else class="relative flex flex-wrap lg:h-screen lg:items-center">
+      <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-0 text-center">
+          <div class="p-2">
+            <img
+                class=""
+                src="https://previews.123rf.com/images/ratoca/ratoca1507/ratoca150700342/43049492-one-moment-please-comment.jpg"
+                alt="Подождите"
+            >
+          </div>
+          <div class="p-2">
+            <h2 class="text-2xl">В такую погоду</h2>
+            <p class="text-base text-gray-800 leading-normal">
+              ...
+            </p>
+          </div>
+        </div>
+        <div class="mx-auto max-w-0 text-center">
+          <div class="p-2">
+            <img
+                class=""
+                src="https://previews.123rf.com/images/ratoca/ratoca1507/ratoca150700342/43049492-one-moment-please-comment.jpg"
+                alt="Подождите"
+            >
+          </div>
+          <div class="p-2">
+            <h2 class="text-2xl">В такую погоду</h2>
+            <p class="text-base text-gray-800 leading-normal">
+              ...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
 </template>
 
 <style scoped>
-.custom-width-50 {
-  width: 50%;
-}
 .custom-bg-summer {
   background-image: linear-gradient( 109.6deg, rgba(156,252,248,1) 11.2%, rgba(110,123,251,1) 91.1% );
 }
