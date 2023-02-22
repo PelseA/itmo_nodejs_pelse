@@ -40,52 +40,45 @@ if (queryString) {
 </script>
 
 <template>
-  <div v-bind:class="customBG">
-    <RouterLink :to="Routes.INDEX">
-      <button
-          class="ml-3 rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-      >
-        Другая погода
-      </button>
-    </RouterLink>
-    <div
-        v-if="contentForAdvice && contentForAdvice[0]"
-        class="relative flex flex-wrap lg:h-screen lg:items-center"
-    >
-      <div
-          v-for="advice in contentForAdvice"
-          class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-        <div class="mx-auto max-w-0 text-center">
-            <div class="p-4">
-              <img
-                  class=""
-                  v-bind:src="advice.lady_img "
-                  alt="Одетый по погоде человек">
-            </div>
-            <div class="p-4">
-              <h2 class="text-2xl">В такую погоду</h2>
-              <p class="text-base text-gray-800 leading-normal">
-                {{ advice.lady_text }}
-              </p>
-            </div>
-            <div class="p-4">
-              <img
-                  class=""
-                  v-bind:src="advice.man_img"
-                  alt="Одетый по погоде человек">
-            </div>
-            <div class="p-4">
-              <h2 class="text-2xl">В такую погоду</h2>
-              <p class="text-base text-gray-800 leading-normal">
-                {{ advice.man_text }}
-              </p>
-            </div>
+  <RouterLink :to="Routes.INDEX">
+    <button class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+      Другая погода
+    </button>
+  </RouterLink>
+  <div >
+    <div v-if="contentForAdvice && contentForAdvice[0]"
+         v-bind:class="customBG"
+         class="relative flex flex-wrap lg:h-screen lg:items-center"
+         >
+      <div v-for="advice in contentForAdvice"
+           class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24"
+           >
+        <div class="mx-auto max-w-lg text-center">
+          <img
+              class=""
+              v-bind:src="advice.lady_img "
+              alt="Одетый по погоде человек">
+
+          <h2 class="text-2xl">В такую погоду</h2>
+          <p class="">
+            {{ advice.lady_text }}
+          </p>
+        </div>
+        <div class="mx-auto max-w-lg text-center">
+          <img
+              class=""
+              v-bind:src="advice.man_img"
+              alt="Одетый по погоде человек">
+          <h2 class="text-2xl">В такую погоду</h2>
+          <p class="l">
+            {{ advice.man_text }}
+          </p>
         </div>
       </div>
     </div>
-    <div v-else class="relative flex flex-wrap lg:h-screen lg:items-center">
-      <div class="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-        <div class="mx-auto max-w-0 text-center">
+    <div v-else class="">
+      <div class="">
+        <div class="">
           <div class="p-2">
             <img
                 class=""
@@ -95,12 +88,12 @@ if (queryString) {
           </div>
           <div class="p-2">
             <h2 class="text-2xl">В такую погоду</h2>
-            <p class="text-base text-gray-800 leading-normal">
+            <p class="">
               ...
             </p>
           </div>
         </div>
-        <div class="mx-auto max-w-0 text-center">
+        <div class="">
           <div class="p-2">
             <img
                 class=""
