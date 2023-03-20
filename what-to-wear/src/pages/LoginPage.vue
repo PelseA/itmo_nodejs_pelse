@@ -1,6 +1,7 @@
 <script setup>
+import LoginForm from "../components/LoginForm.vue";
 </script>
 <template>
-  <div>Login Page</div>
+  <LoginForm></LoginForm>
 </template>
 <style scoped></style>
