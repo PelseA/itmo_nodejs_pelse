@@ -1,4 +1,5 @@
 <script setup>
+import Routes from '../consts/Routes'
 </script>
 <template>
   <!--
@@ -87,8 +88,15 @@
 
       <div class="flex items-center justify-between">
         <p class="text-sm text-gray-500">
-          No account?
-          <a class="underline" href="">Sign up</a>
+          Нет аккаунта?
+          <RouterLink :to="Routes.REGISTER" class="underline">
+            Регистрация
+          </RouterLink>
+        </p>
+        <p class="text-sm text-gray-500">
+          <RouterLink :to="Routes.INDEX" class="underline">
+            На главную
+          </RouterLink>
         </p>
 
         <button
