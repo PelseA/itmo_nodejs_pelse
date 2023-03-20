@@ -31,5 +31,5 @@
   "main": "apollo.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
