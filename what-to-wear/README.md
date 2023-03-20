@@ -12,6 +12,7 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ## Источник изображений
 - https://ru.freepik.com/
 
-## Для стилизации web-интерфейса
+### Стилизация web-интерфейса
 - tailwindcss
+- https://www.hyperui.dev/ Готовые компоненты tailwind
 - css
